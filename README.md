@@ -6,12 +6,20 @@ This repository complements the official WordPress Agent Skills project ([github
 
 ## Why This Repo?
 
+This repository is the distribution layer for a practical WordPress agent workflow that teams can version, share, and apply consistently.
+
+It is built around three capabilities:
+
+- Standards and compliance guardrails: enforce WordPress coding and plugin-review expectations (`wp-coding-standards`, `wp-plugin-directory-compliance`).
+- Delivery workflow orchestration: run a consistent requirements-to-documentation path with SRS-first handoffs (`wp-requirements-specification`, `wp-architecture-description`, `wp-qa-testing`, `wp-ua-testing`, `wp-developer-documentation`, `wp-user-documentation`).
+- Implementation acceleration and discovery: support production tasks such as screenshot-to-block conversion and existing-site analysis (`wp-image-to-blocks`, `wp-site-inventory`).
+
 Use this repo to:
 
 - version custom skill policies in Git
-- maintain team-specific workflows separately from upstream
-- distribute a consistent skill set across projects and environments
-- layer custom behavior on top of official WordPress agent skills
+- keep team-specific workflow decisions independent from upstream defaults
+- distribute a repeatable skill set across projects and environments
+- extend official WordPress agent skills with local operational conventions
 
 ## Available Skills
 
