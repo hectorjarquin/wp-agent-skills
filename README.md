@@ -2,7 +2,7 @@
 
 **Custom WordPress agent skills for GitHub Copilot and other instruction-aware assistants.**
 
-This repository complements the official WordPress Agent Skills project (`https://github.com/WordPress/agent-skills`) with custom, project-specific workflows and policies. It is independently maintained and intended to extend upstream skills, not replace them.
+This repository complements the official WordPress Agent Skills project ([github.com/WordPress/agent-skills](https://github.com/WordPress/agent-skills)) with custom, project-specific workflows and policies. It is independently maintained and intended to extend upstream skills, not replace them.
 
 ## Why This Repo?
 
@@ -20,6 +20,7 @@ Use this repo to:
 | `wp-coding-standards` | WordPress coding standards for PHP, JS, CSS, and HTML |
 | `wp-plugin-directory-compliance` | WordPress.org plugin submission and compliance checks |
 | `wp-image-to-blocks` | Screenshot/design-to-Gutenberg conversion workflow |
+| `wp-requirements-specification` | Pre-implementation specification based on ISO/IEC/IEEE 29148:2018 (StRS, SyRS, SRS) |
 | `wp-site-inventory` | Site inventory and structure analysis workflow |
 
 ## Quick Start
@@ -40,6 +41,7 @@ Copy these skill folders into your selected target directory:
 - `wp-coding-standards`
 - `wp-plugin-directory-compliance`
 - `wp-image-to-blocks`
+- `wp-requirements-specification`
 - `wp-site-inventory`
 
 Updating follows the same process: overwrite or replace those folders in your target directory.
@@ -54,6 +56,7 @@ cp -R skills/wp-coding-standards <project>/.github/skills/
 
 `wp-image-to-blocks` depends on `wp-blockmarkup` MCP for high-confidence, production-ready block output.
 
+- Repository: https://github.com/pluginslab/wp-blockmarkup-mcp
 - Package: https://www.npmjs.com/package/wp-blockmarkup-mcp
 - If this MCP is not installed/available, treat generated block markup as draft and validate before publishing.
 
