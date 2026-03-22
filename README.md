@@ -20,7 +20,12 @@ Use this repo to:
 | `wp-coding-standards` | WordPress coding standards for PHP, JS, CSS, and HTML |
 | `wp-plugin-directory-compliance` | WordPress.org plugin submission and compliance checks |
 | `wp-image-to-blocks` | Screenshot/design-to-Gutenberg conversion workflow |
-| `wp-requirements-specification` | Pre-implementation specification based on ISO/IEC/IEEE 29148:2018 (StRS, SyRS, SRS) |
+| `wp-requirements-specification` | SRS-first pre-implementation specification workflow with optional BRS/StRS/OpsCon/SyRS enrichments |
+| `wp-architecture-description` | Architecture description workflow with SRS-first traceability and ADR coverage |
+| `wp-qa-testing` | QA strategy, planning, procedures, and requirement-linked test coverage |
+| `wp-ua-testing` | Stakeholder acceptance testing with SRS-first traceability and release decision evidence |
+| `wp-developer-documentation` | Developer-facing API/integration documentation with requirement traceability |
+| `wp-user-documentation` | End-user/operator documentation with workflow and requirement mapping |
 | `wp-site-inventory` | Site inventory and structure analysis workflow |
 
 ## Quick Start
@@ -42,6 +47,11 @@ Copy these skill folders into your selected target directory:
 - `wp-plugin-directory-compliance`
 - `wp-image-to-blocks`
 - `wp-requirements-specification`
+- `wp-architecture-description`
+- `wp-qa-testing`
+- `wp-ua-testing`
+- `wp-developer-documentation`
+- `wp-user-documentation`
 - `wp-site-inventory`
 
 Updating follows the same process: overwrite or replace those folders in your target directory.
@@ -90,6 +100,36 @@ All code must adhere to official WordPress coding standards and WordPress.org pl
 - For all code generation (PHP/JS/CSS/HTML), apply the `wp-coding-standards` skill to enforce WordPress Coding Standards.
 - For plugin submission/review compliance checks, use the `wp-plugin-directory-compliance` skill.
 - Canonical checklist reference: `.github/skills/wp-plugin-directory-compliance/references/plugin-directory-requirements.md`.
+```
+
+### Add WordPress Delivery Workflow
+
+```markdown
+## WordPress Delivery Workflow
+
+Use these policy rules for WordPress delivery skills:
+
+1. Skills are independently invocable by default.
+2. Before using any WordPress delivery workflow skill, select the WordPress delivery profile.
+  Use `Default` unless the user or organization explicitly requires `Team` or `Enterprise` controls.
+  Apply the selected profile consistently across any workflow skills used in the request.
+  Each workflow skill must carry and apply its own profile rules so it remains self-contained when reused independently.
+3. Multi-step sequence is optional and user-directed.
+  Only run a full requirements -> architecture -> implementation -> documentation/testing flow when the user explicitly asks for end-to-end workflow support.
+4. For downstream artifacts, users may provide prior files as context.
+  Example: based on an SRS or architecture file and a selected profile, generate QA, UAT, developer docs, or user docs.
+5. Use the SRS as the default downstream handoff artifact.
+  Treat BRS, StRS, OpsCon, and SyRS as optional enrichments unless a downstream skill explicitly needs them for stronger business or system traceability.
+  If UAT runs without stakeholder-level artifacts, record the resulting acceptance assumptions explicitly.
+6. Do not generate all delivery artifacts unless explicitly requested by the user.
+
+If the user explicitly asks for a full sequence, use this default order:
+
+1. Requirements first: use `wp-requirements-specification` to define and validate requirement IDs, with SRS as the default downstream handoff artifact.
+2. Architecture second: use `wp-architecture-description` for architecture views, ADRs, constraints, risks, and mandatory traceability to requirements.
+3. Implementation third: route to implementation skills (`wp-plugin-development`, `wp-rest-api`, `wp-block-development`, `wp-block-themes`, `wp-interactivity-api`) after architecture description is complete.
+4. QA planning during implementation planning: use `wp-qa-testing` before or early during development.
+5. After implementation reaches stable state, generate downstream artifacts as requested (`wp-developer-documentation`, `wp-user-documentation`, `wp-qa-testing` execution evidence updates, `wp-ua-testing`).
 ```
 
 ## How This Repo Is Organized
