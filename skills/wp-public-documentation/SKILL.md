@@ -43,7 +43,7 @@ Unless the user or organization asks for a stricter mode, use **Default**.
 ### Default
 
 - Produce a single page per feature unless the content exceeds 8 H2 sections or 2,000 words — then split into overview + content pages.
-- Include editorial summary block at the top with word count, section count, and screenshot count.
+- Include editorial summary after the title using bracket notation: `[Editorial: Feature: ... | Pages: ... | ...]`
 - Traceability: link SRS FR-XX references inline.
 - No separate approval records unless requested.
 
@@ -67,7 +67,7 @@ If this skill is used on its own, it must still select and apply the correct pro
 
 ## What this skill produces
 
-- **Editorial summary block**
+- **Editorial summary line** (right after the title, wrapped in brackets)
   - Feature name, page count, total word count, section counts (H2/H3/H4), screenshot placeholder count
   - Doc category assignment, target audience badge
 
@@ -135,14 +135,14 @@ Template: "This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 
 Use `references/public-documentation-template.md`:
 
-- Title and editorial summary block
+- Title followed by editorial summary
 - Purpose paragraph
 - H2 sections (2–8, each scannable as a TOC entry)
 - H3 subsections within H2 sections as needed
 - Image placeholders at relevant points
 - Next steps section
 
-**Heading discipline:** Every H2 text must be readable as a standalone TOC entry. A reader scanning the "On this page" sidebar should understand the page from headings alone.
+**Heading discipline:** Every H2 text must be readable as a standalone TOC entry. A reader scanning the "On this page" sidebar should understand the page from headings alone. Use hyphens (-) for list separators in body text. Avoid em dashes (--).
 
 ### 5. Determine page split
 
@@ -161,22 +161,13 @@ Name files using the feature slug:
 
 ### 6. Add editorial summary
 
-At the top of the output, before the title:
+Place the editorial summary as an inline line right after the title, wrapped in brackets:
 
-```markdown
----
-Editorial summary:
-  Feature:     [name]
-  Pages:       [count]
-  Total words: [count]
-  Sections:    [count]  (H2: X, H3: Y, H4: Z)
-  Screenshots needed: [count]
-  Doc category: [path]
-  Audience:    [role]
----
+```
+[Editorial: Feature: [name] | Pages: [count] | Total words: [count] | Sections: [count] (H2: X, H3: Y, H4: Z) | Screenshots needed: [count] | Doc category: [path] | Audience: [role]]
 ```
 
-This lets editors assess scope before review.
+This lets editors assess scope before review. Use pipe separators between fields.
 
 ### 7. Add next steps
 
@@ -198,7 +189,7 @@ When complete:
 - Purpose paragraph names audience, goal, and mechanism
 - Image placeholders are placed at relevant points
 - Next steps are present on every page
-- Editorial summary block is complete
+- Editorial summary is present and accurate
 - No internal "TODO" or "FIXME" markers remain
 - SRS traceability IDs are present where applicable
 

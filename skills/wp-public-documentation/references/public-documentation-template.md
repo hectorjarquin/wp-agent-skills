@@ -6,17 +6,10 @@
 
 ## Editorial Summary
 
-```markdown
----
-Editorial summary:
-  Feature:     [Feature Name]
-  Pages:       [count]
-  Total words: [count]
-  Sections:    [count]  (H2: X, H3: Y, H4: Z)
-  Screenshots needed: [count]
-  Doc category: /docs/category/[parent-category]/
-  Audience:    [audience role]
----
+Place the editorial summary right after the title, wrapped in brackets:
+
+```
+[Editorial: Feature: [Feature Name] | Pages: [count] | Total words: [count] | Sections: [count] (H2: X, H3: Y, H4: Z) | Screenshots needed: [count] | Doc category: /docs/category/[parent-category]/ | Audience: [audience role]]
 ```
 
 ---
@@ -26,18 +19,9 @@ Editorial summary:
 Use for features with 8 or fewer H2 sections and under 2,000 words.
 
 ```markdown
----
-Editorial summary:
-  Feature:     [Feature Name]
-  Pages:       1
-  Total words: [~count]
-  Sections:    [~count]  (H2: X, H3: Y, H4: Z)
-  Screenshots needed: [~count]
-  Doc category: /docs/category/[parent-category]/
-  Audience:    [audience role]
----
+# [Feature Name] - [Verb phrase capturing the outcome]
 
-# [Feature Name] — [Verb phrase capturing the outcome]
+[Editorial: Feature: [Feature Name] | Pages: 1 | Total words: [~count] | Sections: [count] (H2: X, H3: Y, H4: Z) | Screenshots needed: [~count] | Doc category: /docs/category/[parent-category]/ | Audience: [audience role]]
 
 ## Overview
 
@@ -53,7 +37,7 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 
 ---
 
-## [H2 Section 1 — scannable, standalone TOC entry]
+## [H2 Section 1 - scannable, standalone TOC entry]
 
 ### [H3 Subsection if needed]
 
@@ -67,13 +51,13 @@ Content content content.
 
 ---
 
-## [H2 Section 2 — scannable, standalone TOC entry]
+## [H2 Section 2 - scannable, standalone TOC entry]
 
 Content.
 
 ---
 
-## [H2 Section N — max 8]
+## [H2 Section N - max 8]
 
 Content.
 
@@ -101,18 +85,9 @@ Use when content exceeds 8 H2 sections or 2,000 words, or when sections are suff
 ### Page 1: Overview + Table of Contents
 
 ```markdown
----
-Editorial summary:
-  Feature:     [Feature Name]
-  Pages:       [count]
-  Total words: [~total across all pages]
-  Sections:    [~count]  (H2: X, H3: Y, H4: Z)
-  Screenshots needed: [~count]
-  Doc category: /docs/category/[parent-category]/
-  Audience:    [audience role]
----
+# [Feature Name] - [Verb phrase]
 
-# [Feature Name] — [Verb phrase]
+[Editorial: Feature: [Feature Name] | Pages: [count] | Total words: [~total across all pages] | Sections: [count] (H2: X, H3: Y, H4: Z) | Screenshots needed: [~count] | Doc category: /docs/category/[parent-category]/ | Audience: [audience role]]
 
 ## Overview
 
@@ -128,12 +103,12 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 
 <!-- Full table of contents showing all sections across all pages -->
 
-- [Page Title 2 — H2 Section 1](#page-title-2)
+- [Page Title 2 - H2 Section 1](#page-title-2)
   - H3 Subsection A
   - H3 Subsection B
-- [Page Title 3 — H2 Section 2](#page-title-3)
+- [Page Title 3 - H2 Section 2](#page-title-3)
   - H3 Subsection C
-- [Page Title N — H2 Section N](#page-title-n)
+- [Page Title N - H2 Section N](#page-title-n)
 
 ---
 
@@ -152,7 +127,7 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 ### Page 2+: Content pages
 
 ```markdown
-# [Feature Name] — [H2 Section Title]
+# [Feature Name] - [H2 Section Title]
 
 ## [H2 Section Title]
 
@@ -217,6 +192,7 @@ Before handoff, verify every H2 heading:
 - Does the heading use active, descriptive language? ("Configure Data Connections" not "Data Connections Configuration")
 - Is the heading under 60 characters?
 - Does the heading avoid internal jargon (class names, hooks, internal project names)?
+- Does the text use hyphens (-) instead of em dashes (--) for list separators?
 
 ---
 
