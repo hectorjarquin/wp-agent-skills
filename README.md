@@ -6,12 +6,12 @@ This repository complements the official WordPress Agent Skills project ([github
 
 ## Why This Repo?
 
-This repository is the distribution layer for a practical WordPress agent workflow that teams can version, share, and apply consistently.
+This repository is the distribution layer for a practical WordPress agent workflow.
 
 It is built around three capabilities:
 
 - Standards and compliance guardrails: enforce WordPress coding and plugin-review expectations (`wp-coding-standards`, `wp-plugin-directory-compliance`).
-- Delivery workflow orchestration: run a consistent requirements-to-documentation path with SRS-first handoffs (`wp-requirements-specification`, `wp-architecture-description`, `wp-qa-testing`, `wp-ua-testing`, `wp-developer-documentation`, `wp-user-documentation`).
+- Delivery workflow orchestration: run a consistent requirements-to-documentation path with SRS-first handoffs (`wp-requirements-specification`, `wp-architecture-description`, `wp-qa-testing`, `wp-ua-testing`, `wp-developer-documentation`, `wp-user-documentation`, `wp-public-documentation`).
 - Implementation acceleration and discovery: support production tasks such as screenshot-to-block conversion and existing-site analysis (`wp-image-to-blocks`, `wp-site-inventory`).
 
 Use this repo to:
@@ -34,6 +34,7 @@ Use this repo to:
 | `wp-ua-testing` | Stakeholder acceptance testing with SRS-first traceability and release decision evidence |
 | `wp-developer-documentation` | Developer-facing API/integration documentation with requirement traceability |
 | `wp-user-documentation` | End-user/operator documentation with workflow and requirement mapping |
+| `wp-public-documentation` | Public-facing documentation for external publication (web, PDF, help center) |
 | `wp-site-inventory` | Site inventory and structure analysis workflow |
 
 ## Quick Start
@@ -60,6 +61,7 @@ Copy these skill folders into your selected target directory:
 - `wp-ua-testing`
 - `wp-developer-documentation`
 - `wp-user-documentation`
+- `wp-public-documentation`
 - `wp-site-inventory`
 
 Updating follows the same process: overwrite or replace those folders in your target directory.
@@ -137,7 +139,7 @@ If the user explicitly asks for a full sequence, use this default order:
 2. Architecture second: use `wp-architecture-description` for architecture views, ADRs, constraints, risks, and mandatory traceability to requirements.
 3. Implementation third: route to implementation skills (`wp-plugin-development`, `wp-rest-api`, `wp-block-development`, `wp-block-themes`, `wp-interactivity-api`) after architecture description is complete.
 4. QA planning during implementation planning: use `wp-qa-testing` before or early during development.
-5. After implementation reaches stable state, generate downstream artifacts as requested (`wp-developer-documentation`, `wp-user-documentation`, `wp-qa-testing` execution evidence updates, `wp-ua-testing`).
+5. After implementation reaches stable state, generate downstream artifacts as requested (`wp-developer-documentation`, `wp-user-documentation`, `wp-public-documentation`, `wp-qa-testing` execution evidence updates, `wp-ua-testing`).
 ```
 
 ## How This Repo Is Organized
