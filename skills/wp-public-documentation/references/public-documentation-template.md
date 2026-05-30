@@ -37,6 +37,15 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 
 ---
 
+## In this page
+
+- [H2 Section 1 - scannable TOC entry](#h2-section-1)
+  - [H3 Subsection A](#h3-subsection-a)
+  - [H3 Subsection B](#h3-subsection-b)
+- [H2 Section 2 - scannable TOC entry](#h2-section-2)
+
+---
+
 ## [H2 Section 1 - scannable, standalone TOC entry]
 
 ### [H3 Subsection if needed]
@@ -99,15 +108,15 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 
 ---
 
-## On This Page
+## In this page
 
 <!-- Full table of contents showing all sections across all pages -->
 
 - [Page Title 2 - H2 Section 1](#page-title-2)
-  - H3 Subsection A
-  - H3 Subsection B
+  - [H3 Subsection A](#h3-subsection-a)
+  - [H3 Subsection B](#h3-subsection-b)
 - [Page Title 3 - H2 Section 2](#page-title-3)
-  - H3 Subsection C
+  - [H3 Subsection C](#h3-subsection-c)
 - [Page Title N - H2 Section N](#page-title-n)
 
 ---
@@ -193,6 +202,8 @@ Before handoff, verify every H2 heading:
 - Is the heading under 60 characters?
 - Does the heading avoid internal jargon (class names, hooks, internal project names)?
 - Does the text use hyphens (-) instead of em dashes (--) for list separators?
+- Does the In this page TOC list every H2, H3, and H4 heading with a correct anchor link?
+- Does every heading have an explicit anchor value to avoid collisions?
 
 ---
 
@@ -204,3 +215,27 @@ Verify every page ends with a next steps section:
 - Global links point to other features in the same doc category
 - Links use descriptive anchor text, not "click here"
 - At least one local and one global link present
+
+---
+
+## Block markup: In this page list format
+
+When converting the markdown TOC to Gutenberg block markup, use `wp:list-item` wrappers around every list item. Nested sub-lists must use `wp:list` inside the parent `wp:list-item`.
+
+```html
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="#h2-section-1">H2 Section 1</a><!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="#h3-subsection-a">H3 Subsection A</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li><a href="#h2-section-2">H2 Section 2</a></li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+```
+
+Without `wp:list-item` wrappers, the list renders flat instead of nested.

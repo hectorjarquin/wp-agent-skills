@@ -83,6 +83,9 @@ If this skill is used on its own, it must still select and apply the correct pro
   - `<!-- IMAGE: what this screenshot should show -->` inline at relevant points
   - Counted in the editorial summary
 
+- **In this page table of contents** (right after the overview section, listing all H2-H4 headings as linked anchor list)
+  - Block markup: every TOC list item must use `wp:list-item` wrappers (see template Block markup reference)
+
 - **Next steps** (mandatory, final section)
   - Local links to other sections within the same feature
   - Global links to related features in the same doc category
@@ -141,8 +144,9 @@ Use `references/public-documentation-template.md`:
 - H3 subsections within H2 sections as needed
 - Image placeholders at relevant points
 - Next steps section
+- In this page table of contents listing all H2-H4 headings with anchor links, placed after the overview section
 
-**Heading discipline:** Every H2 text must be readable as a standalone TOC entry. A reader scanning the "On this page" sidebar should understand the page from headings alone. Use hyphens (-) for list separators in body text. Avoid em dashes (--).
+**Heading discipline:** Every H2 text must be readable as a standalone TOC entry. A reader scanning the "On this page" sidebar should understand the page from headings alone. Use hyphens (-) for list separators in body text. Avoid em dashes (--). Set explicit anchor values on headings to avoid collisions from duplicate names.
 
 ### 5. Determine page split
 
@@ -190,6 +194,7 @@ When complete:
 - Image placeholders are placed at relevant points
 - Next steps are present on every page
 - Editorial summary is present and accurate
+- In this page TOC is present and lists every H2-H4 heading with correct anchor links
 - No internal "TODO" or "FIXME" markers remain
 - SRS traceability IDs are present where applicable
 
@@ -234,6 +239,7 @@ Profile note:
 - Editorial summary block is present and accurate
 - Image placeholders are placed at relevant points
 - Next steps link to both local and global content
+- In this page TOC accurately reflects all H2-H4 headings
 - Content reads naturally for the target audience
 - No internal references (class names, hooks, curl commands) visible to public readers
 
