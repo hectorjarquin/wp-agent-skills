@@ -2,10 +2,14 @@
 name: wp-coding-standards
 description: "Use when generating or reviewing PHP, JavaScript, CSS, or HTML code in any WordPress context (plugins, themes, block themes, mu-plugins, Gutenberg blocks) to enforce WordPress Coding Standards (WPCS). Covers naming conventions, formatting, sanitization/escaping patterns, SQL safety, and tooling setup."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to all WordPress project types."
+type: skill
+tags: [wordpress, coding, standards, php, js, css, html]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
-# WordPress Coding Standards
 
+# WordPress Coding Standards
 ## When to use
 
 Use this skill whenever you are generating or reviewing WordPress code, regardless of project type:

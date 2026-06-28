@@ -2,6 +2,10 @@
 name: wp-site-inventory
 description: "Use when you need a comprehensive inventory of an unknown or existing WordPress site: content statistics, custom post types, ACF field groups, custom blocks, theme architecture, plugins, global features, and migration considerations. Generates a structured markdown report for AI analysis."
 compatibility: "Requires WP-CLI access to a local WordPress installation. Targets WordPress 5.0+."
+type: skill
+tags: [wordpress, inventory, audit, site]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WP Site Inventory

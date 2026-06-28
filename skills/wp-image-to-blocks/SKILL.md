@@ -2,10 +2,15 @@
 name: wp-image-to-blocks
 description: "Convert website screenshots into WordPress Gutenberg blocks using the G10n system with visual fidelity priority."
 compatibility: "WordPress 6.9+ (PHP 7.2.24+). Image analysis: frontend-friendly; no CLI required."
+type: skill
+tags: [wordpress, gutenberg, image, block-generation]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
+dependencies: [wp-blockmarkup]
 ---
 
-# Convert Screenshots into Gutenberg Blocks
 
+# Convert Screenshots into Gutenberg Blocks
 ## When to use
 
 Use this skill when:

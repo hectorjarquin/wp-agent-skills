@@ -21,6 +21,20 @@ Use this repo to:
 - distribute a repeatable skill set across projects and environments
 - extend official WordPress agent skills with local operational conventions
 
+## OKF v0.1 Format
+
+All skills use [Open Knowledge Format v0.1](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) frontmatter for machine discovery. OKF fields are additive alongside standard agent frontmatter (`name`, `description`, `compatibility`):
+
+```yaml
+type: skill
+tags: [wordpress, domain, keywords]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
+dependencies: [wp-blockmarkup]
+```
+
+This enables MCP-based discovery via [Compend](https://github.com/hectorjarquin/compend) — agents search, browse, and retrieve skills without copying files into target directories.
+
 ## Available Skills
 
 | Skill | What it covers |
@@ -71,6 +85,16 @@ Example (Copilot target only):
 ```bash
 cp -R skills/wp-coding-standards <project>/.github/skills/
 ```
+
+### Discover via Compend (MCP)
+
+Instead of copying files, add this repo to your Compend index and all 11 skills become searchable:
+
+```bash
+compend_index({ path: "/path/to/wp-agent-skills/skills" })
+```
+
+Agents use `compend_search` to find skills and `compend_get` to retrieve full instructions. No file copying. No target directories. OKF frontmatter provides `type`, `tags`, and `dependencies` for structured discovery.
 
 ### Install MCP dependency for image-to-block workflows
 

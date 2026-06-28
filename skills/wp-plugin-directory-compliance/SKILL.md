@@ -2,6 +2,10 @@
 name: wp-plugin-directory-compliance
 description: "Use when reviewing WordPress plugins for WordPress.org directory submission readiness, including plugin-check blocking items, disclosure/readme requirements, licensing, and submission-specific security/compliance rules."
 compatibility: "Targets WordPress plugin repos intended for WordPress.org distribution."
+type: skill
+tags: [wordpress, plugin, directory, compliance, review]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WP Plugin Directory Compliance

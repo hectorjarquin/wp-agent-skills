@@ -2,6 +2,10 @@
 name: wp-requirements-specification
 description: "Use when a WordPress feature, plugin, or block needs a formal pre-implementation specification package. Uses SRS as the default downstream handoff artifact and adds BRS, StRS, OpsCon, and SyRS only when stronger business, stakeholder, operational, or system traceability is needed. Aligns requirements work to ISO/IEC/IEEE 29148:2018 and enforces traceability from business outcomes to verifiable software requirements. Use before wp-block-development, wp-plugin-development, or wp-rest-api skills are invoked."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, block themes, and standalone blocks."
+type: skill
+tags: [wordpress, requirements, specification]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WordPress Requirements Specification

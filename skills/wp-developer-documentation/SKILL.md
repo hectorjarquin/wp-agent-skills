@@ -2,6 +2,10 @@
 name: wp-developer-documentation
 description: "Use when completed WordPress software needs developer-facing API, integration, and extension documentation. Produces class references, API guides, integration instructions, code examples, and troubleshooting for developers and integrators. Aligns to ISO/IEC/IEEE 26514:2022 (Information for Use — Developer Reference). Use after wp-block-development, wp-plugin-development, or wp-rest-api implementation is complete."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, blocks, and custom classes."
+type: skill
+tags: [wordpress, documentation, developer, api]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WordPress Developer Documentation

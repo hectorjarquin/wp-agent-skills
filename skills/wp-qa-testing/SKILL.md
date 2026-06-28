@@ -2,6 +2,10 @@
 name: wp-qa-testing
 description: "Use when WordPress software needs procedural testing framework and verification approach. Produces test strategy, test plans, test procedures, and test case specifications for developers and QA teams. Aligns to ISO/IEC/IEEE 29119-2:2021 (Test Process) with ISO/IEC TR 29119-6:2021 (Agile Tailoring). Use during implementation planning before testing begins."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, blocks, and custom features requiring systematic verification."
+type: skill
+tags: [wordpress, testing, qa, verification]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WordPress QA Testing

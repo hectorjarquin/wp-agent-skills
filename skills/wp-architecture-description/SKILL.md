@@ -2,6 +2,10 @@
 name: wp-architecture-description
 description: "Use when a WordPress feature, plugin, or subsystem needs a formal architecture description before implementation. Produces architecture views, architectural decisions (with rationale), constraints, risks, and requirement-linked coverage references to SRS IDs, with SyRS enrichment when available. Aligns architecture work to ISO/IEC/IEEE 42010:2022 and integrates with the requirements flow from wp-requirements-specification."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, block themes, standalone blocks, and service-style WordPress integrations."
+type: skill
+tags: [wordpress, architecture, planning]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WordPress Architecture Description

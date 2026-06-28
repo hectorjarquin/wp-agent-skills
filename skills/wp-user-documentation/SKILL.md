@@ -2,6 +2,10 @@
 name: wp-user-documentation
 description: "Use when completed WordPress software needs end-user, operator, or administrator documentation. Produces task-based guides, workflows, procedures, FAQs, and troubleshooting for non-technical stakeholders. Aligns to ISO/IEC/IEEE 26514:2022 (Information for Use — Task-based). Use after wp-block-development, wp-plugin-development, or wp-block-themes implementation achieves stable UI."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, blocks, and custom features with user-facing UI."
+type: skill
+tags: [wordpress, documentation, user, admin]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WordPress User Documentation

@@ -2,6 +2,10 @@
 name: wp-ua-testing
 description: "Use when WordPress software is ready for stakeholder validation before release or handoff. Produces stakeholder-friendly acceptance criteria, test scenarios, execution evidence, and a release decision summary. Uses SRS as the canonical upstream handoff artifact, with StRS and OpsCon enriching business-fit coverage when available. Aligns to ISO/IEC/IEEE 29119-3:2021 (Test Documentation) and ISO/IEC 25010:2023 (Quality Model)."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, blocks, and features requiring stakeholder validation."
+type: skill
+tags: [wordpress, testing, uat, stakeholder]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WordPress User Acceptance Testing

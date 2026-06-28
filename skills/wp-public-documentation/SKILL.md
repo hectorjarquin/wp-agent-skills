@@ -2,6 +2,10 @@
 name: wp-public-documentation
 description: "Use when completed WordPress software needs public-facing, publication-ready documentation. Transforms upstream artifacts (SRS, architecture, developer docs, user docs) into audience-appropriate content suitable for any output format (website, PDF, help center, printed). Aligns to ISO/IEC/IEEE 26514:2022 (Information for Use — Task-based). Use after wp-user-documentation when producing content for external publication."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, blocks, and custom features with stable upstream documentation."
+type: skill
+tags: [wordpress, documentation, public, publication]
+timestamp: 2026-06-27T00:00:00Z
+resource: ./references/
 ---
 
 # WordPress Public Documentation
