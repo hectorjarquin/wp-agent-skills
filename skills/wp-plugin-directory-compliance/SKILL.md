@@ -14,7 +14,6 @@ Use this skill when:
 - running a release gate before packaging a public plugin ZIP
 - auditing an existing plugin against directory-specific requirements
 - validating readme/disclosure/licensing compliance beyond generic coding standards
-- preparing a resubmission after a pended or rejected review
 
 Do **not** use this skill for:
 
@@ -54,8 +53,6 @@ Before marking compliant:
 - External service disclosure text is present when applicable.
 - Text domain and slug alignment are verified.
 - Required direct-file-access guards are present in PHP entry files.
-- All review-flagged issues are resolved in a single cycle. WordPress.org reviewers expect one resubmission addressing every flagged item.
-- After fixing, activate the plugin in a test environment, re-run Plugin Check, and confirm no blocking issues remain.
 
 ## Output format
 

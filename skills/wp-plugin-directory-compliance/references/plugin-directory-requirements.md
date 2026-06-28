@@ -26,40 +26,6 @@ throw new Exception( 'API returned status ' . esc_html( $status_code ) );
 throw new Exception( 'Connection failed: ' . esc_html( $connection_name ) );
 ```
 
-### JSON-LD in Script Tags: Use JSON_HEX_TAG
-
-When outputting JSON-LD or any JSON inside a `<script>` tag, use `JSON_HEX_TAG` instead of `JSON_UNESCAPED_SLASHES`. This prevents `</script>` sequence injection that could break page parsing.
-
-```php
-// BAD - Allows </script> injection via user data
-echo '<script type="application/ld+json">' . wp_json_encode( $data, JSON_UNESCAPED_SLASHES ) . '</script>';
-
-// GOOD - Escapes </script> sequences
-echo '<script type="application/ld+json">' . wp_json_encode( $data, JSON_HEX_TAG ) . '</script>';
-```
-
-**Note:** `JSON_HEX_TAG` encodes `<` and `>` as `\u003C` and `\u003E`, which prevents premature script tag closure while keeping JSON valid.
-
-### esc_url vs esc_url_raw
-
-Use the right escaping function for the context:
-
-- `esc_url()` - for display/output contexts (href, src, form action, redirect destination shown to user)
-- `esc_url_raw()` - for database storage, redirect locations, HTTP API calls (raw URL, no entity encoding)
-
-```php
-// BAD - esc_url_raw on output (double-encodes or leaves raw entities)
-echo '<a href="' . esc_url_raw( $url ) . '">Link</a>';
-
-// GOOD - esc_url for display
-echo '<a href="' . esc_url( $url ) . '">Link</a>';
-
-// GOOD - esc_url_raw for storage
-update_option( 'my_plugin_endpoint', esc_url_raw( $endpoint_url ) );
-```
-
-WordPress.org reviewers flag `esc_url_raw` when `esc_url` is the appropriate choice. Use `esc_url` for all output unless you specifically need a raw URL for storage or HTTP request context.
-
 ### Nonce Verification Must Sanitize Input
 
 ```php
@@ -134,25 +100,6 @@ To build from source:
 1. npm install
 2. npm run build
 ```
-
-### Readme Repository Section
-
-If your plugin has minified assets, the readme must document where source code lives. Add a `== Repository ==` section to readme.txt:
-
-```text
-== Repository ==
-
-Source code and build instructions:
-https://github.com/yourname/your-plugin
-
-To build from source:
-1. git clone https://github.com/yourname/your-plugin
-2. cd your-plugin
-3. npm install
-4. npm run build
-```
-
-This covers the WordPress.org requirement that all minified code has a human-readable source.
 
 ### Unique Prefixes - More Strict Than General WordPress
 
@@ -230,11 +177,6 @@ $total_count = (int) $wpdb->get_var( $count_query );
 
 **Required readme.txt:** Must validate at https://wordpress.org/plugins/about/validator/
 
-**Plugin URI Must Be Reachable:**
-- Plugin URI header must return HTTP 200.
-- If no dedicated page exists for the plugin, omit the header or use a GitHub repository URL.
-- A 404 Plugin URI is a review flag that must be corrected before submission.
-
 ### Third-Party Services (Must Disclose)
 
 **If plugin calls external APIs, MUST document in readme.txt:**
@@ -266,19 +208,6 @@ No data is sent without explicit user action or opt-in.
 - Explain what data is sent
 - Explain when data is sent
 
-**Readme.txt template for External Services:**
-
-```text
-== External Services ==
-
-Service Name: Example Service
-  Purpose: Describe what the service does
-  Data sent: List specific data fields
-  When sent: Describe trigger conditions (user action, schedule, etc.)
-  Terms of Service: https://example.com/tos
-  Privacy Policy: https://example.com/privacy
-```
-
 ### Internationalization - Text Domain Must Match Slug
 
 **WordPress.org enforces text domain = plugin slug:**
@@ -295,18 +224,6 @@ __( $variable, 'textdomain' );
 // GOOD - String visible to translators
 __( 'Settings Page', 'textdomain' );
 ```
-
-## Post-Fix Verification Checklist
-
-Before resubmitting to WordPress.org after a review:
-
-- Verify every flagged issue has a fix. Do not submit partial fixes.
-- Activate the plugin in a test environment and exercise the fixed code paths.
-- Re-run Plugin Check (PCP). Confirm no blocking errors remain.
-- Re-read the plugin ZIP to confirm no stale files are packaged.
-- Reply to the review thread with a per-item summary of fixes applied.
-
-WordPress.org reviewers expect one resubmission with all issues resolved. If you miss an item, the review will likely be rejected rather than pended again.
 
 ## Compliance Validation Tools
 
