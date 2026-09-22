@@ -264,7 +264,6 @@ This package supports stakeholder review and a recorded release decision without
 - Internal QA or developer testing (use `wp-qa-testing`)
 - General WordPress Coding Standards (use `wp-coding-standards`)
 - End-user or developer documentation (use `wp-user-documentation` or `wp-developer-documentation`)
-- Block markup generation (use `wp-image-to-blocks`)
 - Requirements specification itself (use `wp-requirements-specification`)
 
 ## Standards & Traceability

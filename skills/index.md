@@ -4,7 +4,6 @@ A collection of WordPress agent skills for instruction-aware assistants.
 
 - [Coding Standards](./wp-coding-standards/SKILL.md) — WordPress coding standards for PHP, JS, CSS, and HTML
 - [Plugin Directory Compliance](./wp-plugin-directory-compliance/SKILL.md) — WordPress.org plugin submission and compliance checks
-- [Image to Blocks](./wp-image-to-blocks/SKILL.md) — Screenshot/design-to-Gutenberg conversion workflow
 - [Requirements Specification](./wp-requirements-specification/SKILL.md) — SRS-first pre-implementation specification with optional BRS/StRS/OpsCon/SyRS enrichments
 - [Architecture Description](./wp-architecture-description/SKILL.md) — Architecture views, ADRs, constraints, and requirement traceability
 - [QA Testing](./wp-qa-testing/SKILL.md) — QA strategy, planning, procedures, and requirement-linked test coverage
@@ -16,7 +15,7 @@ A collection of WordPress agent skills for instruction-aware assistants.
 
 ## Convention
 
-OKF v0.1. Each `SKILL.md` carries YAML frontmatter with `type`, `tags`, `timestamp`, `resource`, and optional `dependencies`. Discoverable via [Compend](https://github.com/hectorjarquin/compend) MCP server.
+OKF v0.1. Each `SKILL.md` carries YAML frontmatter with `type`, `tags`, `timestamp`, `resource`, and optional `dependencies`.
 
 ## Related
 

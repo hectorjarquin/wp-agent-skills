@@ -43,7 +43,6 @@ Use this skill before implementation begins on any non-trivial WordPress feature
 Do **not** use this skill for:
 
 - Reviewing existing code — use `wp-project-triage`
-- Block markup generation — use `wp-image-to-blocks`
 - Plugin submission review — use `wp-plugin-directory-compliance`
 - General coding standards — use `wp-coding-standards`
 

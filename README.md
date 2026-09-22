@@ -12,7 +12,7 @@ It is built around three capabilities:
 
 - Standards and compliance guardrails: enforce WordPress coding and plugin-review expectations (`wp-coding-standards`, `wp-plugin-directory-compliance`).
 - Delivery workflow orchestration: run a consistent requirements-to-documentation path with SRS-first handoffs (`wp-requirements-specification`, `wp-architecture-description`, `wp-qa-testing`, `wp-ua-testing`, `wp-developer-documentation`, `wp-user-documentation`, `wp-public-documentation`).
-- Implementation acceleration and discovery: support production tasks such as screenshot-to-block conversion and existing-site analysis (`wp-image-to-blocks`, `wp-site-inventory`).
+- Implementation acceleration and discovery: support production tasks such as existing-site analysis (`wp-site-inventory`).
 
 Use this repo to:
 
@@ -30,10 +30,7 @@ type: skill
 tags: [wordpress, domain, keywords]
 timestamp: 2026-06-27T00:00:00Z
 resource: ./references/
-dependencies: [wp-blockmarkup]
 ```
-
-This enables MCP-based discovery via [Compend](https://github.com/hectorjarquin/compend) — agents search, browse, and retrieve skills without copying files into target directories.
 
 ## Available Skills
 
@@ -41,7 +38,6 @@ This enables MCP-based discovery via [Compend](https://github.com/hectorjarquin/
 |---|---|
 | `wp-coding-standards` | WordPress coding standards for PHP, JS, CSS, and HTML |
 | `wp-plugin-directory-compliance` | WordPress.org plugin submission and compliance checks |
-| `wp-image-to-blocks` | Screenshot/design-to-Gutenberg conversion workflow |
 | `wp-requirements-specification` | SRS-first pre-implementation specification workflow with optional BRS/StRS/OpsCon/SyRS enrichments |
 | `wp-architecture-description` | Architecture description workflow with SRS-first traceability and ADR coverage |
 | `wp-qa-testing` | QA strategy, planning, procedures, and requirement-linked test coverage |
@@ -68,7 +64,6 @@ Copy these skill folders into your selected target directory:
 
 - `wp-coding-standards`
 - `wp-plugin-directory-compliance`
-- `wp-image-to-blocks`
 - `wp-requirements-specification`
 - `wp-architecture-description`
 - `wp-qa-testing`
@@ -86,42 +81,9 @@ Example (Copilot target only):
 cp -R skills/wp-coding-standards <project>/.github/skills/
 ```
 
-### Discover via Compend (MCP)
-
-Instead of copying files, add this repo to your Compend index and all 11 skills become searchable:
-
-```bash
-compend_index({ path: "/path/to/wp-agent-skills/skills" })
-```
-
-Agents use `compend_search` to find skills and `compend_get` to retrieve full instructions. No file copying. No target directories. OKF frontmatter provides `type`, `tags`, and `dependencies` for structured discovery.
-
-### Install MCP dependency for image-to-block workflows
-
-`wp-image-to-blocks` depends on `wp-blockmarkup` MCP for high-confidence, production-ready block output.
-
-- Repository: https://github.com/pluginslab/wp-blockmarkup-mcp
-- Package: https://www.npmjs.com/package/wp-blockmarkup-mcp
-- If this MCP is not installed/available, treat generated block markup as draft and validate before publishing.
-
 ## Configure Copilot Instructions
 
 Add the policy blocks below to your project's `.github/copilot-instructions.md` so the assistant consistently routes to these skills.
-
-### Add `wp-image-to-blocks` policy
-
-```markdown
-### Skill Invocation Reliability
-- For screenshot/mockup-to-Gutenberg requests (for example: "convert image/screenshot/design to blocks"), always invoke the `wp-image-to-blocks` skill first.
-- Do not answer screenshot-to-block requests from generic memory alone; follow the skill workflow explicitly.
-- When `wp-blockmarkup` MCP tools are available, use MCP-first validation for generated markup:
-  1. `search_blocks`
-  2. `get_block_schema` (and `list_block_attributes` when needed)
-  3. Generate markup
-  4. `validate_markup`
-  5. Iterate until valid
-- Keep local delta policies from `wp-image-to-blocks` references (class minimalism, `core/image` wrapper constraints, `core/button` parity, single canonical output).
-```
 
 ### Add standards/compliance policy
 

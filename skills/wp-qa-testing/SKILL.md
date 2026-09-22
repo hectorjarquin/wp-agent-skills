@@ -255,7 +255,6 @@ Ready for developers to begin testing.
 - Stakeholder acceptance testing (use `wp-ua-testing`)
 - General WordPress Coding Standards (use `wp-coding-standards`)
 - End-user or developer documentation (use `wp-user-documentation` or `wp-developer-documentation`)
-- Block markup generation (use `wp-image-to-blocks`)
 - Requirements specification itself (use `wp-requirements-specification`)
 
 ## Standards & Traceability

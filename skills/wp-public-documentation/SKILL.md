@@ -212,7 +212,6 @@ Profile note:
 - Internal operator or administrator task guides (use `wp-user-documentation`)
 - Developer API or code integration documentation (use `wp-developer-documentation`)
 - General WordPress Coding Standards (use `wp-coding-standards`)
-- Block markup generation or design (use `wp-image-to-blocks`)
 - Test case specification (use `wp-qa-testing` or `wp-ua-testing`)
 - Technical requirements or architecture (use `wp-requirements-specification`)
 - Site inventory or structure analysis (use `wp-site-inventory`)

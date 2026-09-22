@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-09-22
+
+- Removed the `wp-image-to-blocks` skill and its `references/`
+- Dropped the `wp-blockmarkup` MCP dependency and related README guidance
+- De-referenced `wp-image-to-blocks` from `index.md` and cross-skill "Do not use" lists
+
 ## 2026-06-27
 
 - Published initial bundle with 11 WordPress agent skills

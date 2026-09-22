@@ -5,6 +5,18 @@ All notable changes to wp-agent-skills will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2026-09-22
+
+### Removed
+- `wp-image-to-blocks` skill and its `references/` (block selection, media handling, patterns, validation, visual fidelity)
+- `wp-blockmarkup` MCP dependency and its README installation/discovery guidance
+
+### Changed
+- `skills/index.md` and `skills/log.md` de-referenced the removed skill
+- Cross-references to `wp-image-to-blocks` removed from `wp-coding-standards`, `wp-requirements-specification`, `wp-developer-documentation`, `wp-user-documentation`, `wp-public-documentation`, `wp-qa-testing`, and `wp-ua-testing`
+- Available-skill count in README updated from 11 to 10
+- README and `skills/index.md` no longer reference the Compend MCP discovery workflow
+
 ## [1.0.0] - 2026-06-27
 
 ### Added

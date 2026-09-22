@@ -24,7 +24,6 @@ Do **not** use this skill for:
 
 - plugin submission readiness (use `wp-plugin-directory-compliance`)
 - block implementation details (use `wp-block-development`)
-- Gutenberg block markup serialization (use `wp-image-to-blocks`)
 - PHPStan static analysis (use `wp-phpstan`)
 
 ## Authoritative sources

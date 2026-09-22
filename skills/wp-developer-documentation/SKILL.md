@@ -200,7 +200,6 @@ Profile note:
 ## Do not use this skill for
 
 - General WordPress Coding Standards (use `wp-coding-standards`)
-- Block markup generation or design (use `wp-image-to-blocks`)
 - End-user/operator documentation (use `wp-user-documentation`)
 - Test case specification (use `wp-qa-testing` or `wp-ua-testing`)
 - Architecture decisions that belong in the SRS (use `wp-requirements-specification`)
