@@ -5,6 +5,11 @@ All notable changes to wp-agent-skills will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- `wp-coding-standards` HTML reference: `target`/`rel` link guidance (validate `target` against a safelist, escape with `esc_attr()`, optional `rel="noopener"`)
+
 ## [2.0.0] - 2026-09-22
 
 ### Removed

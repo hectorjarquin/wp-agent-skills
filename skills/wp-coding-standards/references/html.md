@@ -159,6 +159,35 @@ Link text must describe the destination — no "click here" or bare URLs:
 <a href="/about">https://example.com/about</a>
 ```
 
+### Links: `target` and `rel`
+
+`target` values must come from a fixed set. Treat any `target` as untrusted — validate
+it against a safelist *before* output, then escape on output:
+
+- Valid values only: `_blank`, `_self`, `_parent`, `_top` (or a named target the code owns).
+- Validate with strict comparison: `in_array( $target, $allowed, true )`.
+- Escape the whole attribute value on output with `esc_attr()`.
+
+```php
+$allowed = array( '_blank', '_self', '_parent', '_top' );
+$target  = in_array( $raw_target, $allowed, true ) ? $raw_target : '_self';
+
+echo '<a href="' . esc_url( $url ) . '" target="' . esc_attr( $target ) . '">' .
+	esc_html( $label ) . '</a>';
+```
+
+`rel="noopener"` for `target="_blank"`: modern browsers apply `noopener` implicitly, and
+WordPress core stopped adding it automatically in 6.7. Adding it is still valid
+defensive practice for older browsers but is no longer required:
+
+```html
+<!-- Optional hardening; not required by WordPress -->
+<a href="https://example.com" target="_blank" rel="noopener">External</a>
+```
+
+Do **not** add `rel="noreferrer"` by default — it strips the `Referer` header and has
+attribution/analytics side effects. Use it only deliberately.
+
 ### Headings
 
 Do not skip heading levels. One `<h1>` per page (typically the post/page title):

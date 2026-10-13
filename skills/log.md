@@ -1,5 +1,9 @@
 # Change Log
 
+## 2026-10-13
+
+- Added `target`/`rel` link guidance to `wp-coding-standards/references/html.md` (safelist + `esc_attr()`, optional `rel="noopener"`)
+
 ## 2026-09-22
 
 - Removed the `wp-image-to-blocks` skill and its `references/`
