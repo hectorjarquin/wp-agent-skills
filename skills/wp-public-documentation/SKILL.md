@@ -1,6 +1,6 @@
 ---
 name: wp-public-documentation
-description: "Use when completed WordPress software needs public-facing, publication-ready documentation. Transforms upstream artifacts (SRS, architecture, developer docs, user docs) into audience-appropriate content suitable for any output format (website, PDF, help center, printed). Aligns to ISO/IEC/IEEE 26514:2022 (Information for Use — Task-based). Use after wp-user-documentation when producing content for external publication."
+description: "Use when completed WordPress software needs public-facing, publication-ready documentation. Transforms upstream artifacts (SRS, architecture, developer docs, user docs) into audience-appropriate content (single-audience or merged multi-audience pages) suitable for any output format (website, PDF, help center, printed). Aligns to ISO/IEC/IEEE 26514:2022 (Information for Use — Task-based). Use after wp-user-documentation when producing content for external publication."
 compatibility: "Targets WordPress 6.9+ (PHP 7.4+). Applies to plugins, themes, blocks, and custom features with stable upstream documentation."
 type: skill
 tags: [wordpress, documentation, public, publication]
@@ -82,13 +82,14 @@ If this skill is used on its own, it must still select and apply the correct pro
   - Each H2 is a standalone, scannable TOC entry
   - Minimum 2 sections, maximum 8 per page
   - H3 subsections for detailed content under each H2
+  - In multi-audience mode, the top-level H2s are the selected outcome sections (Understand / Act / Extend); use H3s under each for detail
 
 - **Image placeholders**
   - `<!-- IMAGE: what this screenshot should show -->` inline at relevant points
   - Counted in the editorial summary
 
 - **In this page table of contents** (right after the overview section, listing all H2-H4 headings as linked anchor list)
-  - Block markup: every TOC list item must use `wp:list-item` wrappers (see template Block markup reference)
+  - Do not hand-generate the TOC with `core/list`. At publication, ask whether a table-of-contents block is available in the target theme (for example `starter/table-of-contents`); use it when available, otherwise emit a manual anchor list.
 
 - **Next steps** (mandatory, final section)
   - Local links to other sections within the same feature
@@ -111,16 +112,22 @@ If this skill is used on its own, it must still select and apply the correct pro
 
 ## Procedure
 
-### 1. Identify the target audience
+### 1. Determine the audience (ask the user — multiselect)
 
-Determine who will consume this documentation:
+If the user has not already specified who this document serves, ask via a
+multiselect. Each selected audience produces one outcome-oriented section:
 
-- **End users**: task-focused, minimal configuration, emphasis on "what can I do with this?"
-- **Site administrators**: configuration details, prerequisites, permission requirements
-- **Evaluators**: emphasis on "why should I use this?", benefits, outcomes
-- **AI agents / automation consumers**: only relevant when the feature exposes programmatic contracts; include schema references and discovery endpoints
+| Audience | Outcome section |
+|---|---|
+| Decision-Maker / Product Owner | **Understand** — business intent, value, data-sovereignty/security/performance |
+| Site Manager / Editor | **Act** — no-code UI path, admin navigation, status badges, toggles |
+| Engineer / DevOps | **Extend / Operate** — concrete PHP hooks, WP-CLI commands, REST endpoints, storage |
 
-Keep one document focused on one primary audience. Different audiences get separate documents.
+- One selection → a single-audience page (one section).
+- Multiple (or all) selections → a merged multi-audience page, one section per
+  selected audience, in the order Understand → Act → Extend.
+
+Never assume an audience; ask when it is not instructed.
 
 ### 2. Extract the purpose statement
 
@@ -130,6 +137,10 @@ Write one sentence that names:
 - Mechanism: "by connecting to PostgreSQL databases and Supabase-style REST APIs"
 
 Template: "This feature enables **[audience]** to **[goal]** by **[mechanism]**."
+
+For a multi-audience page, the purpose statement names the combined audience
+(e.g., "decision-makers, editors, and engineers") while the page still opens with
+a single scannable intent.
 
 ### 3. Review upstream artifacts
 
@@ -172,7 +183,7 @@ Name files using the feature slug:
 Place the editorial summary as an inline line right after the title, wrapped in brackets:
 
 ```
-[Editorial: Feature: [name] | Pages: [count] | Total words: [count] | Sections: [count] (H2: X, H3: Y, H4: Z) | Screenshots needed: [count] | Doc category: [path] | Audience: [role]]
+[Editorial: Feature: [name] | Pages: [count] | Total words: [count] | Sections: [count] (H2: X, H3: Y, H4: Z) | Screenshots needed: [count] | Doc category: [path] | Audience: [comma-separated roles]]
 ```
 
 This lets editors assess scope before review. Use pipe separators between fields.
@@ -210,7 +221,7 @@ Profile note:
 ## Do not use this skill for
 
 - Internal operator or administrator task guides (use `wp-user-documentation`)
-- Developer API or code integration documentation (use `wp-developer-documentation`)
+- Developer API or code integration documentation (use `wp-developer-documentation`) — except that, in a multi-audience page with the Engineer audience selected, the Extend/Operate section may carry hooks, WP-CLI, and REST references; the standalone developer reference still lives in `wp-developer-documentation`
 - General WordPress Coding Standards (use `wp-coding-standards`)
 - Test case specification (use `wp-qa-testing` or `wp-ua-testing`)
 - Technical requirements or architecture (use `wp-requirements-specification`)
@@ -244,7 +255,7 @@ Profile note:
 - Next steps link to both local and global content
 - In this page TOC accurately reflects all H2-H4 headings
 - Content reads naturally for the target audience
-- No internal references (class names, hooks, curl commands) visible to public readers
+- No internal references (class names, hooks, curl commands) visible to public readers, except inside the Extend/Operate section when the Engineer audience is selected
 
 ## Example outputs
 
