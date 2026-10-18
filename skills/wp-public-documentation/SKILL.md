@@ -91,13 +91,9 @@ If this skill is used on its own, it must still select and apply the correct pro
 - **In this page table of contents** (right after the overview section, listing all H2-H4 headings as linked anchor list)
   - Do not hand-generate the TOC with `core/list`. At publication, ask whether a table-of-contents block is available in the target theme (for example `starter/table-of-contents`); use it when available, otherwise emit a manual anchor list.
 
-- **Next steps** (mandatory, final section)
-  - Local links to other sections within the same feature
-  - Global links to related features in the same doc category
-
 - **Multi-page split** (when content exceeds single-page threshold)
-  - Page 1: Title, purpose, table of contents (full H2→H3→H4 tree), next steps
-  - Page 2+: Title matching H2, content sections, next steps per page
+  - Page 1: Title, purpose, table of contents (full H2→H3→H4 tree)
+  - Page 2+: Title matching H2, content sections
 
 ## Inputs required
 
@@ -158,7 +154,6 @@ Use `references/public-documentation-template.md`:
 - H2 sections (2–8, each scannable as a TOC entry)
 - H3 subsections within H2 sections as needed
 - Image placeholders at relevant points
-- Next steps section
 - In this page table of contents listing all H2-H4 headings with anchor links, placed after the overview section
 
 **Heading discipline:** Every H2 text must be readable as a standalone TOC entry. A reader scanning the "On this page" sidebar should understand the page from headings alone. Use hyphens (-) for list separators in body text. Avoid em dashes (--). Set explicit anchor values on headings to avoid collisions from duplicate names.
@@ -171,8 +166,8 @@ Evaluate whether content needs multiple pages:
 - **Multi-page**: exceeds thresholds, or sections are sufficiently independent that separate pages improve navigation
 
 For multi-page output:
-- Page 1: Title, purpose paragraph, full table of contents (all H2→H3→H4), next steps
-- Subsequent pages: Title matching the H2 section, content, next steps with links to other pages
+- Page 1: Title, purpose paragraph, full table of contents (all H2→H3→H4)
+- Subsequent pages: Title matching the H2 section, content
 
 Name files using the feature slug:
 - Single page: `<feature-slug>-public-documentation.md`
@@ -188,26 +183,19 @@ Place the editorial summary as an inline line right after the title, wrapped in 
 
 This lets editors assess scope before review. Use pipe separators between fields.
 
-### 7. Add next steps
-
-End every page with a "Next steps" section containing:
-- **Local** — links to other sections within the same feature page
-- **Global** — links to other features in the same doc category
-
-### 8. Cross-reference requirements
+### 7. Cross-reference requirements
 
 Add inline traceability:
 
 - `[SRS: FR-XX]` at the end of key sections
 - If no SRS exists, document assumptions from verified behavior
 
-### 9. Hand off
+### 8. Hand off
 
 When complete:
 - Headings are scannable as standalone TOC entries
 - Purpose paragraph names audience, goal, and mechanism
 - Image placeholders are placed at relevant points
-- Next steps are present on every page
 - Editorial summary is present and accurate
 - In this page TOC is present and lists every H2-H4 heading with correct anchor links
 - No internal "TODO" or "FIXME" markers remain
@@ -252,7 +240,6 @@ Profile note:
 - H2 headings are scannable as standalone TOC entries
 - Editorial summary block is present and accurate
 - Image placeholders are placed at relevant points
-- Next steps link to both local and global content
 - In this page TOC accurately reflects all H2-H4 headings
 - Content reads naturally for the target audience
 - No internal references (class names, hooks, curl commands) visible to public readers, except inside the Extend/Operate section when the Engineer audience is selected

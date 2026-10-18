@@ -71,18 +71,6 @@ Content.
 Content.
 
 ---
-
-## Next Steps
-
-**Local:**
-- [Section 1](#h2-section-1)
-- [Section 2](#h2-section-2)
-
-**Global:**
-- [Related Feature A](/docs/related-feature-a/)
-- [Related Feature B](/docs/related-feature-b/)
-
-[SRS: FR-XX] [StRS: SN-XX]
 ```
 
 ---
@@ -120,17 +108,6 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 - [Page Title N - H2 Section N](#page-title-n)
 
 ---
-
-## Next Steps
-
-**Local:**
-- [Page 2: Section 1](#page-title-2)
-- [Page 3: Section 2](#page-title-3)
-
-**Global:**
-- [Related Feature A](/docs/related-feature-a/)
-
-[SRS: FR-XX]
 ```
 
 ### Page 2+: Content pages
@@ -149,17 +126,6 @@ Content.
 [SRS: FR-YY]
 
 ---
-
-## Next Steps
-
-**Local:**
-- [Back to overview](#link-back-to-page-1)
-- [Next section: Section Name](#link-to-page-3)
-
-**Global:**
-- [Related Feature A](/docs/related-feature-a/)
-
-[SRS: FR-YY]
 ```
 
 ---
@@ -204,17 +170,6 @@ Before handoff, verify every H2 heading:
 - Does the text use hyphens (-) instead of em dashes (--) for list separators?
 - Does the In this page TOC list every H2, H3, and H4 heading with a correct anchor link?
 - Does every heading have an explicit anchor value to avoid collisions?
-
----
-
-## Next steps checklist
-
-Verify every page ends with a next steps section:
-
-- Local links point to other sections or pages within the same feature
-- Global links point to other features in the same doc category
-- Links use descriptive anchor text, not "click here"
-- At least one local and one global link present
 
 ---
 

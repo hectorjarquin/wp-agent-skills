@@ -11,7 +11,6 @@
 - H2 headings scannable as standalone TOC entries
 - Editorial summary is present and accurate
 - Image placeholders placed at relevant points
-- Next steps present on every page
 - SRS traceability inline
 - Uses hyphens (-) not em dashes (--)
 
@@ -50,13 +49,3 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 <onboarding guidance>
 
 ---
-
-## Next Steps
-
-**Local:**
-- [Section 1](#section-1)
-
-**Global:**
-- [Related Feature](/docs/related-feature/)
-
-[SRS: FR-XX]

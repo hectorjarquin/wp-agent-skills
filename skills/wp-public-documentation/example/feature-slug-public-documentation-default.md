@@ -28,13 +28,3 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 [SRS: FR-ZZ]
 
 ---
-
-## Next Steps
-
-**Local:**
-- [Section 1](#section-1)
-
-**Global:**
-- [Related Feature](/docs/related-feature/)
-
-[SRS: FR-XX]

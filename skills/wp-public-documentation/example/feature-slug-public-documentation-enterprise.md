@@ -63,16 +63,6 @@ This feature enables **[audience]** to **[goal]** by **[mechanism]**.
 
 ---
 
-## Next Steps
-
-**Local:**
-- [Section 1](#section-1)
-
-**Global:**
-- [Related Feature](/docs/related-feature/)
-
----
-
 ## Release Control Note
 
 This document is controlled content. Updates require compliance review before publication. See approval record above for current status.
