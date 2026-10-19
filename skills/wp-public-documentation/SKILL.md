@@ -82,7 +82,7 @@ If this skill is used on its own, it must still select and apply the correct pro
   - Each H2 is a standalone, scannable TOC entry
   - Minimum 2 sections, maximum 8 per page
   - H3 subsections for detailed content under each H2
-  - In multi-audience mode, the top-level H2s are the selected outcome sections (Understand / Act / Extend); use H3s under each for detail
+  - In multi-audience mode, group content into one top-level section per selected audience, ordered Understand → Act → Extend. Those words are internal lenses only — they never appear as headings. Infer each section's title from its source `.md` heading (the SRS purpose for the decision-maker section, the developer doc's reference headings for the engineer section), cleaned to a scannable, content-specific H2; use H3s under each for detail
 
 - **Image placeholders**
   - `<!-- IMAGE: what this screenshot should show -->` inline at relevant points
@@ -118,6 +118,11 @@ multiselect. Each selected audience produces one outcome-oriented section:
 | Decision-Maker / Product Owner | **Understand** — business intent, value, data-sovereignty/security/performance |
 | Site Manager / Editor | **Act** — no-code UI path, admin navigation, status badges, toggles |
 | Engineer / DevOps | **Extend / Operate** — concrete PHP hooks, WP-CLI commands, REST endpoints, storage |
+
+The outcome word is a thinking lens, never a heading. Infer each section's title
+from the corresponding source `.md` — its section headings or purpose — so the
+H2 is concrete and content-specific (e.g. "What the Abilities API does",
+"REST endpoints and permissions").
 
 - One selection → a single-audience page (one section).
 - Multiple (or all) selections → a merged multi-audience page, one section per
