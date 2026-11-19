@@ -5,7 +5,14 @@ All notable changes to wp-agent-skills will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [3.0.0] - 2026-11-19
+
+### Removed
+- Documentation-engineering skills — `wp-requirements-specification`, `wp-architecture-description`, `wp-qa-testing`, `wp-ua-testing`, `wp-developer-documentation`, `wp-user-documentation`, `wp-public-documentation` — extracted to a separate framework-agnostic bundle. This repo now keeps only the irreducibly WordPress-specific skills.
+
+### Changed
+- `README.md` and `skills/index.md` updated to list only `wp-coding-standards`, `wp-plugin-directory-compliance`, `wp-site-inventory`
+- Available-skill count reduced from 10 to 3
 
 ### Added
 - `wp-coding-standards` HTML reference: `target`/`rel` link guidance (validate `target` against a safelist, escape with `esc_attr()`, optional `rel="noopener"`)

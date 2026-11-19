@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-11-19
+
+- Extracted the seven documentation-engineering skills to a separate framework-agnostic bundle: `wp-requirements-specification`, `wp-architecture-description`, `wp-qa-testing`, `wp-ua-testing`, `wp-developer-documentation`, `wp-user-documentation`, `wp-public-documentation`
+- Kept `wp-coding-standards`, `wp-plugin-directory-compliance`, `wp-site-inventory` (irreducibly WordPress-specific)
+- Updated `index.md` and root `README.md` to reflect the reduced bundle
+
 ## 2026-10-13
 
 - Added `target`/`rel` link guidance to `wp-coding-standards/references/html.md` (safelist + `esc_attr()`, optional `rel="noopener"`)

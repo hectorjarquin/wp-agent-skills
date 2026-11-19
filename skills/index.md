@@ -2,15 +2,10 @@
 
 A collection of WordPress agent skills for instruction-aware assistants.
 
+The generic documentation-engineering skills (requirements specification, architecture description, QA/UA testing, developer/user/public documentation) have been extracted into a separate framework-agnostic bundle and are no longer in this repository. This bundle keeps only the irreducibly WordPress-specific skills.
+
 - [Coding Standards](./wp-coding-standards/SKILL.md) — WordPress coding standards for PHP, JS, CSS, and HTML
 - [Plugin Directory Compliance](./wp-plugin-directory-compliance/SKILL.md) — WordPress.org plugin submission and compliance checks
-- [Requirements Specification](./wp-requirements-specification/SKILL.md) — SRS-first pre-implementation specification with optional BRS/StRS/OpsCon/SyRS enrichments
-- [Architecture Description](./wp-architecture-description/SKILL.md) — Architecture views, ADRs, constraints, and requirement traceability
-- [QA Testing](./wp-qa-testing/SKILL.md) — QA strategy, planning, procedures, and requirement-linked test coverage
-- [UA Testing](./wp-ua-testing/SKILL.md) — Stakeholder acceptance testing with SRS-first traceability
-- [Developer Documentation](./wp-developer-documentation/SKILL.md) — API and integration documentation with requirement traceability
-- [User Documentation](./wp-user-documentation/SKILL.md) — End-user/operator documentation with workflow mapping
-- [Public Documentation](./wp-public-documentation/SKILL.md) — Publication-ready documentation for web, PDF, help center
 - [Site Inventory](./wp-site-inventory/SKILL.md) — Site structure analysis and inventory workflow
 
 ## Convention
